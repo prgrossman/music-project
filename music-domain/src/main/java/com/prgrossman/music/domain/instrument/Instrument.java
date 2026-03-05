@@ -10,7 +10,7 @@ public abstract class Instrument extends Product {
 
     public abstract InstrumentType getInstrumentType();
 
-    protected Instrument( int productId, int basePrice, String modelName, Condition condition){
+    protected Instrument( int productId, double basePrice, String modelName, Condition condition){
         super(productId, basePrice);
         if(modelName == null || modelName.isBlank()){
             throw new IllegalArgumentException("Model name required.");

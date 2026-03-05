@@ -3,6 +3,8 @@ package listings;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.prgrossman.music.domain.instrument.InstrumentType;
+import com.prgrossman.music.domain.product.Condition;
+
 import java.util.UUID;
 
 /**
@@ -12,8 +14,7 @@ import java.util.UUID;
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        visible = true
+        property = "type"
 )
 
 /**
@@ -33,13 +34,48 @@ import java.util.UUID;
 )
 
 public abstract class InstrumentListing {
-    private final UUID listingId;
-    protected InstrumentListing(UUID listingId) {
-        this.listingId = listingId;
+
+    private int productId;
+    private  int basePrice;
+    private String modelName;
+    private Condition condition;
+
+    protected InstrumentListing() {
     }
 
     public abstract InstrumentType getType();
 
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public int getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(int basePrice) {
+        this.basePrice = basePrice;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public Condition getCondition() {
+        return condition;
+    }
+
+    public void setCondition(Condition condition) {
+        this.condition = condition;
+    }
 }
 
 //Instrument = physical object identity

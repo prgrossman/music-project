@@ -4,13 +4,16 @@ import com.prgrossman.music.domain.product.Condition;
 
 public class Guitar extends Instrument{
 
+    @Override
+    public InstrumentType getInstrumentType(){
+        return InstrumentType.GUITAR;
+    }
+
     public Guitar(int productId, int basePrice, String modelName, Condition condition) {
         super(productId, basePrice, modelName, condition);
     }
 
-    public InstrumentType getInstrumentType(){
-        return InstrumentType.GUITAR;
-    }
+
 }
 
 //getters only if outside objects need to read it.
