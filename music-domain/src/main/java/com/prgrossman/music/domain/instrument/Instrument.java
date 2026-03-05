@@ -5,8 +5,8 @@ import com.prgrossman.music.domain.product.Product;
 import com.prgrossman.music.domain.product.ProductType;
 
 public abstract class Instrument extends Product {
-    private String modelName;
-    private Condition condition;
+    private final String modelName;
+    private final Condition condition;
 
     public abstract InstrumentType getInstrumentType();
 
@@ -18,6 +18,8 @@ public abstract class Instrument extends Product {
         if(condition == null){
             throw new IllegalArgumentException("Condition required");
         }
+        this.modelName = modelName;
+        this.condition = condition;
 
     }
 
