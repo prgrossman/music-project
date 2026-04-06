@@ -1,11 +1,10 @@
 package listings;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.prgrossman.music.domain.instrument.InstrumentType;
 import com.prgrossman.music.domain.product.Condition;
-
-import java.util.UUID;
 
 /**
  * Polymorphic JSON: @JsonTypeInfo is on InstrumentListing (base type).
@@ -21,6 +20,8 @@ import java.util.UUID;
  * @JsonSubTypes is telling Jackson which concrete Listing
  * to instantiate when it sees e.g. "type": "GUITAR"
  */
+
+
 
 @JsonSubTypes(
         {@JsonSubTypes.Type(
@@ -43,6 +44,7 @@ public abstract class InstrumentListing {
     protected InstrumentListing() {
     }
 
+    @JsonIgnore
     public abstract InstrumentType getType();
 
     public int getProductId() {
