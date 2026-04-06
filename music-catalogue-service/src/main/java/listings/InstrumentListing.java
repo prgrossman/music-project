@@ -47,6 +47,7 @@ public abstract class InstrumentListing {
     @JsonIgnore
     public abstract InstrumentType getType();
 
+
     public int getProductId() {
         return productId;
     }

@@ -11,7 +11,7 @@ public class GuitarListing extends InstrumentListing {
     }
 
     @Override
-    public InstrumentType getType() {
+    public InstrumentType getInstrumentType() {
         return InstrumentType.GUITAR;
     }
 }

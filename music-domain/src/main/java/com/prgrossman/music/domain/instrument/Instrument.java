@@ -8,8 +8,6 @@ public abstract class Instrument extends Product {
     private final String modelName;
     private final Condition condition;
 
-    public abstract InstrumentType getInstrumentType();
-
     protected Instrument( int productId, double basePrice, String modelName, Condition condition){
         super(productId, basePrice);
         if(modelName == null || modelName.isBlank()){
@@ -35,5 +33,7 @@ public abstract class Instrument extends Product {
     public ProductType getProductType(){
         return ProductType.INSTRUMENT;
     }
+
+    public abstract InstrumentType getInstrumentType();
 
 }
