@@ -43,7 +43,7 @@ public abstract class InstrumentListing {
     protected InstrumentListing() {
     }
 
-    public abstract InstrumentType getType();
+    public abstract InstrumentType getInstrumentType();
 
     public int getProductId() {
         return productId;

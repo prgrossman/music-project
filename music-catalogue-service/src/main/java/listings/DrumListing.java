@@ -11,7 +11,7 @@ public class DrumListing extends InstrumentListing {
     }
 
     @Override
-    public InstrumentType getType() {
+    public InstrumentType getInstrumentType() {
         return InstrumentType.DRUM;
     }
 }
